@@ -5,3 +5,4 @@ Functions include:
   2. Second asks for a username to associate with the passowrd
   3. Third asks how many characters the password should have
 - Clears the contents of textfile
+- Display existing username and password with associated account type
