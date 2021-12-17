@@ -12,7 +12,6 @@ def password_maker():
         password=character[randint(0,67)]
         value=str(password)
         generate+=value
-    #file.write(purpose+' ('+username+')'+':'+str(generate)+'\n')
     file.write(f'{purpose} ({username}): {generate}\n')
     print(f'Password for {purpose} ({username}):{generate}')
     file.close()
@@ -27,11 +26,17 @@ def clear_data():
         pass
     else:
         print('N it is.')
-print('Option:\nGenerate\nCLEAR ALL DATA')
+def read():
+    file=open('password.txt','r')
+    for i in file:
+        print(i)
+print('Option:\nGenerate\nCLEAR ALL DATA\nDisplay Info')
 option=input('What do you want to do?: ')
 if option=='Generate':
     password_maker()
 elif option=='Clear Data':
     clear_data()
+elif option=='Display Info':
+    read()
 input('Press the Enter key to close program.')
 
