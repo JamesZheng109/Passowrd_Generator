@@ -2,19 +2,18 @@ from random import randint
 character=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',1,2,3,4,5,6,7,8,9,0,
            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','#','$','@','!','&',
            '*']
-file=open('password.txt','a')
 def password_maker():
     purpose=input('Account type? ')
     username=input('Username for account? ')
     amount=int(input('How many characters? '))
     generate=''
-    for password in range(amount):
-        password=character[randint(0,67)]
-        value=str(password)
-        generate+=value
-    file.write(f'{purpose} ({username}): {generate}\n')
-    print(f'Password for {purpose} ({username}):{generate}')
-    file.close()
+    with open('password.txt','a') as file:
+        for password in range(amount):
+            password=character[randint(0,67)]
+            value=str(password)
+            generate+=value
+        file.write(f'{purpose} ({username}): {generate}\n')
+        print(f'Password for {purpose} ({username}):{generate}')
 def clear_data():
     check=input('Are you sure?(Y or N): ')
     if check=='Y':
@@ -27,9 +26,9 @@ def clear_data():
     else:
         print('N it is.')
 def read():
-    file=open('password.txt','r')
-    for i in file:
-        print(i)
+    with open('password.txt','r') as file:
+        content=file.read()
+        print(content)
 print('Option:\nGenerate\nCLEAR ALL DATA\nDisplay Info')
 option=input('What do you want to do?: ')
 if option=='Generate':
