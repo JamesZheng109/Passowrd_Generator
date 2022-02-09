@@ -1,4 +1,4 @@
-# Passowrd_Generator
+# Passoword_Generator
 Functions include:
 - Creates a password and puts it into a textfile via the following steps:
   1. First asks account type
