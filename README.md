@@ -1,4 +1,6 @@
 # Passoword_Generator
+**BE SURE TO UNZIP FILE OR THE TEXT FILE WILL NOT GENERATE**
+
 Functions include:
 - Creates a password and puts it into a textfile via the following steps:
   1. First asks account type
