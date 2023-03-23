@@ -4,6 +4,11 @@ character=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','
            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
            '#','$','@','!','&','*']    
 def main():
+    try:
+        file=open('password.txt','r')
+    except:
+        file=open('password.txt','w')
+    file.close()
     print('Option:\nGenerate\nClear All Data\nDisplay Info\nSpecific Search')
     option=input('What do you want to do?: ')
     #Make passoword
